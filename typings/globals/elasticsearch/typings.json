@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/2fb77a5dfb87b928801d061ee5232ad84a153870/elasticsearch/index.d.ts",
+    "raw": "registry:dt/elasticsearch#5.0.0+20161116052743",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/2fb77a5dfb87b928801d061ee5232ad84a153870/elasticsearch/index.d.ts"
+  }
+}

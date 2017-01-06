@@ -1,0 +1,39 @@
+{
+  "name": "Article",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "required": true,
+      "id": true,
+      "postgresDS": {
+        "columnName": "id",
+        "dataType": "text"
+      }
+    },
+    "version": {
+      "type": "string",
+      "required": true,
+      "postgresDS": {
+        "columnName": "version",
+        "dataType": "text"
+      }
+    },
+    "blob": {
+      "type": "object",
+      "required": true,
+      "postgresDS": {
+        "columnName": "blob",
+        "dataType": "jsonb"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
