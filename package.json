@@ -32,8 +32,8 @@
   },
   "licenses": [
     {
-      "type": "MIT",
-      "url": "https://spdx.org/licenses/MIT"
+      "type": "GPL-3",
+      "url": "https://github.com/arsalans/postgres-elastic-sync-example/blob/master/LICENSE"
     }
   ],
   "description": "postgres-elastic-sync-example"
