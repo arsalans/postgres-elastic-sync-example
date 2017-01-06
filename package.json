@@ -1,5 +1,5 @@
 {
-  "name": "bnx-elastic-sync-service",
+  "name": "postgres-elastic-sync-example",
   "version": "1.0.0",
   "main": "server/server.js",
   "scripts": {
@@ -36,5 +36,5 @@
       "url": "https://spdx.org/licenses/MIT"
     }
   ],
-  "description": "bnx-elastic-sync-service"
+  "description": "postgres-elastic-sync-example"
 }
