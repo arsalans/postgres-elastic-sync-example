@@ -33,9 +33,9 @@ function insertIntoDatabaseAndElastic(id, article, index) {
     });
     return false;
 }
-exports.insertIntoDatabaseAndElastic = insertIntoDatabaseAndElastic;
 function insertIntoElasticSearchThroughQueue(objectId, article, index) {
     let decoratedQueueObject = new decorated_queue_object_1.DecoratedQueueObject(objectId, article, index, "insert");
     messageProducer.sendMessageToDefaultQueue(JSON.stringify(decoratedQueueObject));
 }
+module.exports = insertIntoDatabaseAndElastic;
 //# sourceMappingURL=insert-db-elastic.js.map

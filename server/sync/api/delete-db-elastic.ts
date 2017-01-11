@@ -15,7 +15,7 @@ let logger = require("../../logger");
  * @param index defines the elastic search index where the data will be deleted (i.e., article)
  * @returns {boolean} true if everything is successful
  */
-export function deleteFromDatabaseAndElastic(id: string, index: string): boolean {
+function deleteFromDatabaseAndElastic(id: string, index: string): boolean {
   validateIsUndefinedOrNull(id, "id");
   validateIsUndefinedOrNull(index, "index");
 
@@ -35,3 +35,5 @@ function deleteFromElasticThroughQueue(objectId: string, index: string) {
   let decoratedQueueObject = new DecoratedQueueObject(objectId, null, index, "delete");
   messageProducer.sendMessageToDefaultQueue(JSON.stringify(decoratedQueueObject));
 }
+
+module.exports = deleteFromDatabaseAndElastic;

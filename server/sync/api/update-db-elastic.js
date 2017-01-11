@@ -61,4 +61,5 @@ function updateElasticSearchThroughQueue(objectId, article, index) {
     let decoratedQueueObject = new decorated_queue_object_1.DecoratedQueueObject(objectId, article, index, "update");
     messageProducer.sendMessageToDefaultQueue(JSON.stringify(decoratedQueueObject));
 }
+module.exports = updateIntoDatabaseAndElastic;
 //# sourceMappingURL=update-db-elastic.js.map

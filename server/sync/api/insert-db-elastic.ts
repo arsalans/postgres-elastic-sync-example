@@ -4,7 +4,7 @@ let loopback = require('loopback');
 import {validateIsUndefinedOrNull} from "../../utils/helpers";
 import {DecoratedQueueObject} from "../queue/decorated-queue-object";
 import messageProducer = require ("../queue/message-producer");
-let logger = require ("../../logger");
+let logger = require("../../logger");
 
 /**
  * This method inserts the json content both in postgres and elastic search (through queue). It should be called like this:
@@ -22,7 +22,7 @@ let logger = require ("../../logger");
  * @param index defines the elastic search index where the data will be inserted (i.e., article)
  * @returns {boolean} true if everything is successful
  */
-export function insertIntoDatabaseAndElastic(id: string, article, index: string): boolean {
+function insertIntoDatabaseAndElastic(id: string, article, index: string): boolean {
   validateIsUndefinedOrNull(id, "id");
   validateIsUndefinedOrNull(article, "article");
   validateIsUndefinedOrNull(index, "index");
@@ -43,3 +43,5 @@ function insertIntoElasticSearchThroughQueue(objectId: string, article: Object, 
   let decoratedQueueObject = new DecoratedQueueObject(objectId, article, index, "insert");
   messageProducer.sendMessageToDefaultQueue(JSON.stringify(decoratedQueueObject));
 }
+
+module.exports = insertIntoDatabaseAndElastic;

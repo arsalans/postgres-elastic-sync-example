@@ -25,9 +25,9 @@ function deleteFromDatabaseAndElastic(id, index) {
     });
     return true;
 }
-exports.deleteFromDatabaseAndElastic = deleteFromDatabaseAndElastic;
 function deleteFromElasticThroughQueue(objectId, index) {
     let decoratedQueueObject = new decorated_queue_object_1.DecoratedQueueObject(objectId, null, index, "delete");
     messageProducer.sendMessageToDefaultQueue(JSON.stringify(decoratedQueueObject));
 }
+module.exports = deleteFromDatabaseAndElastic;
 //# sourceMappingURL=delete-db-elastic.js.map
